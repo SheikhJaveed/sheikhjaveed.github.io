@@ -495,6 +495,16 @@ body {
 }
 
 @media (max-width: 600px) {
+  .contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .contact-link {
+    font-size: 0.85rem;
+    word-break: break-all; /* prevents overflow */
+  }
   .app-layout {
     padding: 1.5rem 1rem;
   }
