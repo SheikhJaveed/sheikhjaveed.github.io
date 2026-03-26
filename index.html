@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Sheikh Mannan Javeed | Software Engineer</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="tailwind-config.js"></script>
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="selection:bg-primary selection:text-on-primary flex flex-col">
+    <!-- Top Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-[#0a0e13]/80 backdrop-blur-md flex justify-between items-center px-6 md:px-12 py-6 border-b border-outline-variant/10">
+        <div class="text-xl font-black tracking-widest text-[#4edea3] font-headline cursor-pointer" onclick="navigateTo('hero')">PORTFOLIO.DEV</div>
+        
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex gap-10">
+            <button class="nav-link font-headline font-bold tracking-tighter uppercase text-sm text-primary transition-colors duration-300" data-nav="hero" onclick="navigateTo('hero')">HOME</button>
+            <button class="nav-link font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e6] hover:text-[#4edea3] transition-colors duration-300" data-nav="work" onclick="navigateTo('work')">EXPERIENCE</button>
+            <button class="nav-link font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e6] hover:text-[#4edea3] transition-colors duration-300" data-nav="projects" onclick="navigateTo('projects')">PROJECTS</button>
+            <button class="nav-link font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e6] hover:text-[#4edea3] transition-colors duration-300" data-nav="contact" onclick="navigateTo('contact')">CONTACT</button>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-[#4edea3] material-symbols-outlined select-none" onclick="toggleMobileMenu()">menu</button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-[#0a0e13]/95 backdrop-blur-xl flex flex-col justify-center items-center gap-12 transition-all duration-500 opacity-0 pointer-events-none">
+        <button class="absolute top-8 right-8 text-[#4edea3] material-symbols-outlined text-3xl" onclick="toggleMobileMenu()">close</button>
+        <button class="text-4xl font-black text-[#e2e2e6] hover:text-[#4edea3] transition-colors tracking-tighter" onclick="mobileNavigate('hero')">HOME</button>
+        <button class="text-4xl font-black text-[#e2e2e6] hover:text-[#4edea3] transition-colors tracking-tighter" onclick="mobileNavigate('work')">EXPERIENCE</button>
+        <button class="text-4xl font-black text-[#e2e2e6] hover:text-[#4edea3] transition-colors tracking-tighter" onclick="mobileNavigate('projects')">PROJECTS</button>
+        <button class="text-4xl font-black text-[#e2e2e6] hover:text-[#4edea3] transition-colors tracking-tighter" onclick="mobileNavigate('contact')">CONTACT</button>
+    </div>
+
+    <main class="flex-grow pt-24 relative overflow-hidden">
+        <!-- Hero Section -->
+        <section class="section-fade section-active h-full flex flex-col px-6 md:px-12 dot-grid overflow-y-auto" id="hero">
+            <div class="max-w-6xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center py-12 md:py-24">
+                <div class="lg:col-span-8">
+                    <p class="font-label text-primary uppercase tracking-[0.3em] mb-6 text-sm flex items-center gap-2">
+                        <span class="w-2 h-2 bg-primary inline-block"></span>
+                        Open to new opportunities and collaborations
+                    </p>
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-on-background tracking-tighter leading-[0.9] mb-8">
+                        Sheikh Mannan Javeed<br/>
+                        <span class="text-on-surface-variant blinking-cursor text-2xl md:text-4xl lg:text-5xl block mt-4 italic" id="type-target"></span>
+                    </h1>
+                    <p class="max-w-xl text-on-surface-variant text-lg md:text-xl font-body leading-relaxed opacity-70">
+                        Computer Science student & Full-stack Developer passionate about building scalable backend systems, microservices, and AI-powered solutions.
+                    </p>
+                    <div class="mt-8 flex gap-6">
+                        <a href="https://drive.google.com/file/d/1_hQXZ1GEByD4lx-vj5krEjqYcaE7NOuP/view?usp=drive_link" target="_blank" class="font-label text-xs font-bold text-primary border-b border-primary pb-1 hover:opacity-80 transition-opacity uppercase tracking-widest">View Resume</a>
+                    </div>
+                </div>
+                <!-- Terminal Element -->
+                <div class="lg:col-span-4">
+                    <div class="bg-surface-container p-6 border-l-2 border-primary shadow-2xl">
+                        <div class="flex gap-1.5 mb-6">
+                            <div class="w-2 h-2 bg-outline-variant"></div>
+                            <div class="w-2 h-2 bg-outline-variant"></div>
+                            <div class="w-2 h-2 bg-outline-variant"></div>
+                        </div>
+                        <div class="font-label text-xs md:text-sm space-y-3 text-on-surface-variant" id="terminal-content">
+                            <div class="h-48 overflow-y-auto mb-2 space-y-1 scroll-smooth pr-2" id="terminal-output"></div>
+                            <div class="flex items-center gap-2 mt-2 opacity-0 terminal-line" id="terminal-input-line">
+                                <span class="text-primary flex-shrink-0">&gt;</span>
+                                <div class="relative flex-grow flex items-center">
+                                    <input autocomplete="off" class="absolute inset-0 w-full opacity-0 bg-transparent border-none outline-none text-transparent cursor-default" id="terminal-input" spellcheck="false" type="text"/>
+                                    <div class="text-on-surface break-all min-h-[1em]" id="input-display"></div>
+                                    <span class="w-2 h-4 bg-primary ml-1" id="terminal-cursor"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="section-fade h-full flex flex-col px-6 md:px-12" id="work">
+            <div class="max-w-7xl mx-auto w-full h-full flex flex-col py-10">
+                <div class="mb-10 flex-shrink-0">
+                    <span class="font-label text-primary text-sm uppercase tracking-widest block mb-2">CAREER PATH</span>
+                    <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tighter uppercase">Work Experience.</h2>
+                </div>
+                <div class="space-y-12 overflow-y-auto pr-2 pb-10">
+                    <!-- Timeline Item 1 -->
+                    <div class="relative pl-8 border-l border-outline-variant/30 py-2">
+                        <div class="absolute w-3 h-3 bg-primary left-[-6px] top-6"></div>
+                        <span class="font-label text-[10px] text-primary uppercase tracking-widest block mb-1">Jan 2026 – Present</span>
+                        <h3 class="text-2xl font-black text-on-surface tracking-tight">Full-stack Developer Intern</h3>
+                        <p class="font-label text-xs text-outline uppercase mb-4">Hertzwave Innovations Pvt. Ltd · Bengaluru</p>
+                        <ul class="text-on-surface-variant text-sm space-y-2 max-w-2xl font-body leading-relaxed opacity-80">
+                            <li>• Developing backend services and REST APIs for production-grade applications.</li>
+                            <li>• Working on system integration, data flow, and service coordination.</li>
+                            <li>• Integrating AI-powered services into existing Node.js / React (MERN) systems.</li>
+                            <li>• Documenting backend architecture and API workflows.</li>
+                        </ul>
+                    </div>
+                    <!-- Timeline Item 2 -->
+                    <div class="relative pl-8 border-l border-outline-variant/30 py-2">
+                        <div class="absolute w-3 h-3 bg-primary left-[-6px] top-6 opacity-50"></div>
+                        <span class="font-label text-[10px] text-primary uppercase tracking-widest block mb-1">Sep 2025 – Jan 2026</span>
+                        <h3 class="text-2xl font-black text-on-surface tracking-tight">SDE Intern</h3>
+                        <p class="font-label text-xs text-outline uppercase mb-4">Hertzwave Innovations Pvt. Ltd · Remote</p>
+                        <ul class="text-on-surface-variant text-sm space-y-2 max-w-2xl font-body leading-relaxed opacity-80">
+                            <li>• Built a Compliance Mapper for generating BRSR sustainability reports.</li>
+                            <li>• Developed backend APIs for report configuration and generation.</li>
+                            <li>• Mapped BRSR fields to Scope 1/2/3 emissions using structured JSON.</li>
+                            <li>• Worked on AI-assisted field mapping and PDF export.</li>
+                        </ul>
+                    </div>
+                    <!-- Timeline Item 3 -->
+                    <div class="relative pl-8 border-l border-outline-variant/30 py-2">
+                        <div class="absolute w-3 h-3 bg-primary left-[-6px] top-6 opacity-30"></div>
+                        <span class="font-label text-[10px] text-primary uppercase tracking-widest block mb-1">Oct 2023 – Nov 2023</span>
+                        <h3 class="text-2xl font-black text-on-surface tracking-tight">Mobile Application Developer</h3>
+                        <p class="font-label text-xs text-outline uppercase mb-4">Ramaiah Institute of Technology · Bengaluru</p>
+                        <ul class="text-on-surface-variant text-sm space-y-2 max-w-2xl font-body leading-relaxed opacity-80">
+                            <li>• Built cross-platform mobile applications using Flutter.</li>
+                            <li>• Developed projects including a calculator app and a notes app.</li>
+                            <li>• Implemented UI/UX design principles and state management.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section-fade h-full flex flex-col px-6 md:px-12" id="projects">
+            <div class="max-w-7xl mx-auto w-full h-full flex flex-col py-10">
+                <div class="mb-10 flex-shrink-0">
+                    <span class="font-label text-primary text-sm uppercase tracking-widest block mb-2">SELECTED WORKS</span>
+                    <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tighter uppercase">Code Engineering.</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 flex-grow overflow-y-auto pr-2 pb-10">
+                    <!-- Project Card 1 -->
+                    <div class="bg-surface-container-low group hover:bg-surface-container transition-all duration-500 p-8 flex flex-col h-full border border-outline-variant/10">
+                        <h3 class="text-xl font-bold mb-6 tracking-tight text-on-surface">1. MindArena — AI Debate Club</h3>
+                        <ul class="text-on-surface-variant text-xs mb-8 space-y-4 font-body flex-grow opacity-80">
+                            <li class="flex gap-3"><span class="text-primary mt-1 text-[8px]">▶</span> Developed a role-based AI debate platform using Retrieval Augmented Generation (RAG).</li>
+                            <li class="flex gap-3"><span class="text-primary mt-1 text-[8px]">▶</span> Integrated ChromaDB for efficient vector storage and fact-grounded argument retrieval.</li>
+                            <li class="flex gap-3"><span class="text-primary mt-1 text-[8px]">▶</span> Built with FastAPI, LangChain, and React for a high-performance system.</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="font-label text-[10px] px-2 py-1 bg-surface-container-high text-primary uppercase border border-primary/10">FastAPI</span>
+                            <span class="font-label text-[10px] px-2 py-1 bg-surface-container-high text-primary uppercase border border-primary/10">LangChain</span>
+                            <span class="font-label text-[10px] px-2 py-1 bg-surface-container-high text-primary uppercase border border-primary/10">React</span>
+                            <span class="font-label text-[10px] px-2 py-1 bg-surface-container-high text-primary uppercase border border-primary/10">ChromaDB</span>
+                        </div>
+                        <a class="group/link flex items-center gap-2 font-label text-[10px] font-bold tracking-widest text-on-surface uppercase hover:text-primary transition-colors mt-auto" href="https://github.com/SheikhJaveed/AI-DebateClub-genAI-project" target="_blank">
+                            VIEW SOURCE <span class="material-symbols-outlined text-xs group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                    <!-- Project Card 2 -->
+                    <div class="bg-surface-container-low group hover:bg-surface-container transition-all duration-500 p-8 flex flex-col h-full border border-outline-variant/10">
+                        <h3 class="text-xl font-bold mb-6 tracking-tight text-on-surface">2. Feedback Microservices</h3>
+                        <ul class="text-on-surface-variant text-xs mb-8 space-y-4 font-body flex-grow opacity-80">
+                            <li class="flex gap-3"><span class="text-primary mt-1 text-[8px]">▶</span> Engineered a scalable microservices architecture using Java and Spring Boot.</li>
+                            <li class="flex gap-3"><span class="text-primary mt-1 text-[8px]">▶</span> Optimized data persistence with PostgreSQL and containerized with Docker.</li>
+                            <li class="flex gap-3"><span class="text-primary mt-1 text-[8px]">▶</span> Built specialized modules for real-time analysis of massive customer feedback data.</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="font-label text-[10px] px-2 py-1 bg-surface-container-high text-primary uppercase border border-primary/10">Java</span>
+                            <span class="font-label text-[10px] px-2 py-1 bg-surface-container-high text-primary uppercase border border-primary/10">Spring Boot</span>
+                            <span class="font-label text-[10px] px-2 py-1 bg-surface-container-high text-primary uppercase border border-primary/10">PostgreSQL</span>
+                            <span class="font-label text-[10px] px-2 py-1 bg-surface-container-high text-primary uppercase border border-primary/10">Docker</span>
+                        </div>
+                        <a class="group/link flex items-center gap-2 font-label text-[10px] font-bold tracking-widest text-on-surface uppercase hover:text-primary transition-colors mt-auto" href="https://github.com/SheikhJaveed/customer-feedback-microservices" target="_blank">
+                            VIEW SOURCE <span class="material-symbols-outlined text-xs group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                    <!-- Project Card 3 -->
+                    <div class="bg-surface-container-low group hover:bg-surface-container transition-all duration-500 p-8 flex flex-col h-full border border-outline-variant/10">
+                        <h3 class="text-xl font-bold mb-6 tracking-tight text-on-surface">3. PR Review Assistant</h3>
+                        <ul class="text-on-surface-variant text-xs mb-8 space-y-4 font-body flex-grow opacity-80">
+                            <li class="flex gap-3"><span class="text-primary mt-1 text-[8px]">▶</span> Developed an automated PR review assistant using GitHub APIs and webhooks.</li>
+                            <li class="flex gap-3"><span class="text-primary mt-1 text-[8px]">▶</span> Integrated context-aware code analysis to provide meaningful feedback during reviews.</li>
+                            <li class="flex gap-3"><span class="text-primary mt-1 text-[8px]">▶</span> Built with Python and Flask for a lightweight and reliable developer tool.</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="font-label text-[10px] px-2 py-1 bg-surface-container-high text-primary uppercase border border-primary/10">Python</span>
+                            <span class="font-label text-[10px] px-2 py-1 bg-surface-container-high text-primary uppercase border border-primary/10">Flask</span>
+                            <span class="font-label text-[10px] px-2 py-1 bg-surface-container-high text-primary uppercase border border-primary/10">GitHub API</span>
+                        </div>
+                        <a class="group/link flex items-center gap-2 font-label text-[10px] font-bold tracking-widest text-on-surface uppercase hover:text-primary transition-colors mt-auto" href="https://github.com/SheikhJaveed/PR_Sentinel" target="_blank">
+                            VIEW SOURCE <span class="material-symbols-outlined text-xs group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section-fade h-full flex flex-col justify-center px-6 md:px-12 bg-surface-container-lowest" id="contact">
+            <div class="max-w-4xl mx-auto w-full text-center">
+                <div class="space-y-6 font-mono text-[#86948a]">
+                    <p class="text-xl md:text-2xl opacity-60 animate-pulse">> exit</p>
+                    <p class="text-2xl md:text-4xl text-on-surface font-black tracking-tight uppercase">Session terminated.</p>
+                    <p class="text-2xl md:text-4xl text-on-surface font-black tracking-tight uppercase">Checkout the footer for contact info.</p>
+                    <div class="pt-8 opacity-40 text-xs tracking-widest uppercase">
+                        — Sheikh Mannan Javeed
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0a0e13] w-full py-12 px-6 md:px-12 flex flex-col md:flex-row justify-between items-center border-t border-outline-variant/10 z-50">
+        <div class="font-label text-[10px] uppercase tracking-widest text-[#949494] mb-6 md:mb-0">
+            © 2026 SHEIKH MANNAN JAVEED. ALL RIGHTS RESERVED.
+        </div>
+        <div class="flex gap-8">
+            <a class="text-xl text-[#949494] hover:text-[#4edea3] transition-colors" href="https://github.com/SheikhJaveed" target="_blank" title="GitHub">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a class="text-xl text-[#949494] hover:text-[#4edea3] transition-colors" href="https://www.linkedin.com/in/sheikh-javeed/" target="_blank" title="LinkedIn">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a class="text-xl text-[#949494] hover:text-[#4edea3] transition-colors" href="https://x.com/sheikh_javeed12" target="_blank" title="X (Twitter)">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Custom Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

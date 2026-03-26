@@ -1,0 +1,98 @@
+body {
+    background-color: #0a0e13;
+    color: #e0e2ea;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+}
+.dot-grid {
+    background-image: radial-gradient(#1c2025 1px, transparent 1px);
+    background-size: 32px 32px;
+}
+.blinking-cursor::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
+    color: #4edea3;
+}
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}
+.section-fade {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.section-active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    position: relative;
+}
+.terminal-line {
+    opacity: 0;
+    transform: translateX(-5px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+.terminal-line.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+::-webkit-scrollbar {
+    width: 4px;
+}
+::-webkit-scrollbar-track {
+    background: #0a0e13;
+}
+::-webkit-scrollbar-thumb {
+    background: #1c2025;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #4edea3;
+}
+
+#terminal-cursor {
+    animation: terminal-blink 1s step-end infinite;
+}
+@keyframes terminal-blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}
+#terminal-output::-webkit-scrollbar {
+    width: 2px;
+}
+#terminal-output::-webkit-scrollbar-thumb {
+    background: #1c2025;
+}
+#terminal-output::-webkit-scrollbar-thumb:hover {
+    background: #4edea3;
+}
+
+/* Contact form styles */
+.contact-form input, .contact-form textarea {
+    background: #1c2025;
+    border: 1px solid rgba(134, 148, 138, 0.2);
+    color: #e0e2ea;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: #4edea3;
+    outline: none;
+}
+.contact-form label {
+    display: block;
+    font-family: 'Space Grotesk', monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    color: #86948a;
+}
