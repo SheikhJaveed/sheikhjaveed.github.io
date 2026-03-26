@@ -57,6 +57,11 @@ body {
     background: #4edea3;
 }
 
+#terminal-output {
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
 #terminal-cursor {
     animation: terminal-blink 1s step-end infinite;
 }

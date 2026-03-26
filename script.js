@@ -108,6 +108,13 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             renderOutput(`Command not found: ${cleanCmd}. Type 'help' for options.`);
         }
+
+        // Auto-scroll the page/section to keep the input line visible
+        setTimeout(() => {
+            if (terminalInputLine) {
+                terminalInputLine.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }, 100);
     }
 
     if (terminalInput) {
@@ -143,11 +150,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Focus handling
-    const terminalContainer = document.querySelector('.bg-surface-container');
+    // Focus handling for terminal
+    const terminalContainer = document.querySelector('#terminal-content')?.closest('.bg-surface-container');
     if (terminalContainer && terminalInput) {
-        terminalContainer.addEventListener('click', () => {
-            terminalInput.focus();
+        // Use both click and touchstart for robust mobile interaction
+        ['click', 'touchstart'].forEach(eventType => {
+            terminalContainer.addEventListener(eventType, (e) => {
+                terminalInput.focus();
+                // Ensure the input is visible when the keyboard pops up
+                setTimeout(() => {
+                    if (terminalInputLine) {
+                        terminalInputLine.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                }, 300);
+            });
         });
     }
 
