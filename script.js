@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const terminalOutput = document.getElementById('terminal-output');
+    const scrollArea = document.getElementById('terminal-scroll-area');
     const terminalInput = document.getElementById('terminal-input');
     const inputDisplay = document.getElementById('input-display');
     const terminalInputLine = document.getElementById('terminal-input-line');
@@ -71,8 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
             i++;
             if (i >= text.length) {
                 clearInterval(interval);
-                if (terminalOutput) {
-                    terminalOutput.scrollTop = terminalOutput.scrollHeight;
+                if (scrollArea) {
+                    scrollArea.scrollTop = scrollArea.scrollHeight;
                 }
             }
         }, 15);
@@ -89,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
             typeWriterEffect(content, line);
         }
         terminalOutput.appendChild(line);
-        terminalOutput.scrollTop = terminalOutput.scrollHeight;
+        if (scrollArea) scrollArea.scrollTop = scrollArea.scrollHeight;
     }
 
     function handleCommand(cmd) {

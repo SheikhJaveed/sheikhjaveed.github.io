@@ -143,25 +143,36 @@ body {
 }
 
 @media (max-width: 768px) {
+    body {
+        height: auto;
+        overflow-y: auto;
+    }
+    main {
+        overflow: visible;
+    }
     .site-footer {
-        padding: 1rem 1.5rem;
-        flex-direction: column-reverse;
-        gap: 0.75rem;
-        background: rgba(10, 14, 19, 0.5);
-        backdrop-filter: blur(8px);
+        position: relative;
+        padding: 3rem 1.5rem;
+        flex-direction: column;
+        gap: 1.5rem;
+        background: transparent;
+        backdrop-filter: none;
         mix-blend-mode: normal;
+        pointer-events: auto;
     }
     
     .footer-copyright {
-        font-size: 7px;
+        font-size: 10px;
         text-align: center;
+        order: 2;
     }
 
     .footer-socials {
-        gap: 2rem;
+        gap: 2.5rem;
+        order: 1;
     }
 
     .footer-socials i {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
     }
 }
