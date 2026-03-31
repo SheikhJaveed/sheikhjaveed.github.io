@@ -142,6 +142,86 @@ body {
     color: #4edea3;
 }
 
+/* New Artifact Card v2 styles */
+.artifact-card-v2 {
+    background-color: #1c2025;
+    border: 1px solid rgba(134, 148, 138, 0.05);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.artifact-card-v2:hover {
+    transform: translateY(-10px);
+    border-color: rgba(78, 222, 163, 0.4);
+    box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(78, 222, 163, 0.1);
+}
+
+.artifact-image-container {
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: #0a0e13;
+}
+
+.artifact-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.artifact-card-v2:hover .artifact-image-container img {
+    transform: scale(1.05);
+}
+
+.artifact-pill-button {
+    background-color: #4edea3;
+    color: #0a0e13;
+    font-weight: 700;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.artifact-pill-button:hover {
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(78, 222, 163, 0.3);
+}
+
+.artifact-metadata-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.7rem;
+    color: #86948a;
+    font-family: 'Space Grotesk', monospace;
+}
+
+.artifact-metadata-item span.icon {
+    font-size: 14px;
+    color: #4edea3;
+}
+
+/* Category header style */
+.category-header {
+    border-left: 2px solid #4edea3;
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 3rem;
+}
+
+
 @media (max-width: 768px) {
     body {
         height: auto;

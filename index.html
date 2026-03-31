@@ -21,18 +21,18 @@
 </head>
 <body class="selection:bg-primary selection:text-on-primary flex flex-col">
     <!-- Top Navigation -->
-    <nav class="fixed top-0 w-full z-50 bg-[#0a0e13]/80 backdrop-blur-md flex justify-between items-center px-6 md:px-12 py-6 border-b border-outline-variant/10">
-        <div class="text-xl font-black tracking-widest text-[#4edea3] font-headline cursor-pointer" onclick="navigateTo('hero')">PORTFOLIO.DEV</div>
+    <nav class="fixed top-0 w-full z-50 bg-[#0a0e13]/80 backdrop-blur-md grid grid-cols-2 md:grid-cols-3 items-center px-6 md:px-12 py-6 border-b border-outline-variant/10">
+        <div class="justify-self-start text-xl font-black tracking-widest text-[#4edea3] font-headline cursor-pointer" onclick="navigateTo('hero')">javeed@dev:~</div>
         
         <!-- Desktop Nav -->
-        <div class="hidden md:flex gap-10">
+        <div class="hidden md:flex justify-self-center gap-10">
             <button class="nav-link font-headline font-bold tracking-tighter uppercase text-sm text-primary transition-colors duration-300" data-nav="hero" onclick="navigateTo('hero')">HOME</button>
             <button class="nav-link font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e6] hover:text-[#4edea3] transition-colors duration-300" data-nav="work" onclick="navigateTo('work')">EXPERIENCE</button>
-            <button class="nav-link font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e6] hover:text-[#4edea3] transition-colors duration-300" data-nav="projects" onclick="navigateTo('projects')">PROJECTS</button>
+            <button class="nav-link font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e6] hover:text-[#4edea3] transition-colors duration-300" data-nav="projects" onclick="navigateTo('projects')">ARTIFACTS</button>
             <button class="nav-link font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e6] hover:text-[#4edea3] transition-colors duration-300" data-nav="contact" onclick="navigateTo('contact')">CONTACT</button>
         </div>
 
-        <div class="flex items-center gap-4">
+        <div class="justify-self-end flex items-center gap-4">
             <!-- Mobile Menu Toggle -->
             <button class="md:hidden text-[#4edea3] material-symbols-outlined select-none" onclick="toggleMobileMenu()">menu</button>
         </div>
@@ -43,11 +43,11 @@
         <button class="absolute top-8 right-8 text-[#4edea3] material-symbols-outlined text-3xl" onclick="toggleMobileMenu()">close</button>
         <button class="text-4xl font-black text-[#e2e2e6] hover:text-[#4edea3] transition-colors tracking-tighter" onclick="mobileNavigate('hero')">HOME</button>
         <button class="text-4xl font-black text-[#e2e2e6] hover:text-[#4edea3] transition-colors tracking-tighter" onclick="mobileNavigate('work')">EXPERIENCE</button>
-        <button class="text-4xl font-black text-[#e2e2e6] hover:text-[#4edea3] transition-colors tracking-tighter" onclick="mobileNavigate('projects')">PROJECTS</button>
+        <button class="text-4xl font-black text-[#e2e2e6] hover:text-[#4edea3] transition-colors tracking-tighter" onclick="mobileNavigate('projects')">ARTIFACTS</button>
         <button class="text-4xl font-black text-[#e2e2e6] hover:text-[#4edea3] transition-colors tracking-tighter" onclick="mobileNavigate('contact')">CONTACT</button>
     </div>
 
-    <main class="flex-grow pt-24 relative overflow-hidden">
+    <main class="flex-grow pt-14 pb-5 md:pb-5 relative overflow-hidden">
         <!-- Hero Section -->
         <section class="section-fade section-active h-full flex flex-col px-6 md:px-12 dot-grid overflow-y-auto" id="hero">
             <div class="max-w-6xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center py-12 md:py-24">
@@ -146,70 +146,281 @@
         </section>
 
         <!-- Projects Section -->
-        <section class="section-fade h-full flex flex-col px-6 md:px-12" id="projects">
-            <div class="max-w-7xl mx-auto w-full h-full flex flex-col py-10">
+        <section class="section-fade min-h-full h-auto md:h-full flex flex-col px-6 md:px-12" id="projects">
+            <div class="max-w-7xl mx-auto w-full md:h-full flex flex-col py-10">
                 <div class="mb-10 flex-shrink-0">
-                    <span class="font-label text-primary text-sm uppercase tracking-widest block mb-2">SELECTED WORKS</span>
-                    <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tighter uppercase">Code Engineering.</h2>
+                    <span class="font-label text-primary text-sm uppercase tracking-widest block mb-1">TECHNICAL ARTIFACTS</span>
+                    <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tighter uppercase">Milestones & Lab Work.</h2>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 flex-grow overflow-y-auto pr-2 pb-10">
-                    <!-- Project Card 1 -->
-                    <div class="bg-surface-container-low group hover:bg-surface-container transition-all duration-500 p-8 flex flex-col h-full border border-outline-variant/10">
-                        <h3 class="text-xl font-bold mb-6 tracking-tight text-on-surface">1. MindArena — AI Debate Club</h3>
-                        <ul class="text-on-surface-variant text-xs mb-8 space-y-4 font-body flex-grow opacity-80">
-                            <li class="flex gap-3"><span class="text-primary mt-1 text-[8px]">▶</span> Developed a role-based AI debate platform using Retrieval Augmented Generation (RAG).</li>
-                            <li class="flex gap-3"><span class="text-primary mt-1 text-[8px]">▶</span> Integrated ChromaDB for efficient vector storage and fact-grounded argument retrieval.</li>
-                            <li class="flex gap-3"><span class="text-primary mt-1 text-[8px]">▶</span> Built with FastAPI, LangChain, and React for a high-performance system.</li>
-                        </ul>
-                        <div class="flex flex-wrap gap-2 mb-8">
-                            <span class="font-label text-[10px] px-2 py-1 bg-surface-container-high text-primary uppercase border border-primary/10">FastAPI</span>
-                            <span class="font-label text-[10px] px-2 py-1 bg-surface-container-high text-primary uppercase border border-primary/10">LangChain</span>
-                            <span class="font-label text-[10px] px-2 py-1 bg-surface-container-high text-primary uppercase border border-primary/10">React</span>
-                            <span class="font-label text-[10px] px-2 py-1 bg-surface-container-high text-primary uppercase border border-primary/10">ChromaDB</span>
-                        </div>
-                        <a class="group/link flex items-center gap-2 font-label text-[10px] font-bold tracking-widest text-on-surface uppercase hover:text-primary transition-colors mt-auto" href="https://github.com/SheikhJaveed/AI-DebateClub-genAI-project" target="_blank">
-                            VIEW SOURCE <span class="material-symbols-outlined text-xs group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
-                        </a>
+                <div class="flex-grow overflow-y-auto pr-2 pb-10 md:pb-32 scrollbar-thin">
+                    
+                    <!-- SECTION 1: SIGNATURE PROJECT -->
+                    <div class="category-header">
+                        <span class="font-label text-primary text-[10px] uppercase tracking-[0.2em]">01 / THE SIGNATURE</span>
+                        <h3 class="text-2xl font-bold text-on-surface tracking-tight">Signature Project</h3>
                     </div>
-                    <!-- Project Card 2 -->
-                    <div class="bg-surface-container-low group hover:bg-surface-container transition-all duration-500 p-8 flex flex-col h-full border border-outline-variant/10">
-                        <h3 class="text-xl font-bold mb-6 tracking-tight text-on-surface">2. Feedback Microservices</h3>
-                        <ul class="text-on-surface-variant text-xs mb-8 space-y-4 font-body flex-grow opacity-80">
-                            <li class="flex gap-3"><span class="text-primary mt-1 text-[8px]">▶</span> Engineered a scalable microservices architecture using Java and Spring Boot.</li>
-                            <li class="flex gap-3"><span class="text-primary mt-1 text-[8px]">▶</span> Optimized data persistence with PostgreSQL and containerized with Docker.</li>
-                            <li class="flex gap-3"><span class="text-primary mt-1 text-[8px]">▶</span> Built specialized modules for real-time analysis of massive customer feedback data.</li>
-                        </ul>
-                        <div class="flex flex-wrap gap-2 mb-8">
-                            <span class="font-label text-[10px] px-2 py-1 bg-surface-container-high text-primary uppercase border border-primary/10">Java</span>
-                            <span class="font-label text-[10px] px-2 py-1 bg-surface-container-high text-primary uppercase border border-primary/10">Spring Boot</span>
-                            <span class="font-label text-[10px] px-2 py-1 bg-surface-container-high text-primary uppercase border border-primary/10">PostgreSQL</span>
-                            <span class="font-label text-[10px] px-2 py-1 bg-surface-container-high text-primary uppercase border border-primary/10">Docker</span>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                        <!-- DeMarkX -->
+                        <div class="artifact-card-v2">
+                            <div class="artifact-image-container">
+                                <img src="assets/demarkx.png" alt="DeMarkX">
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <div class="flex justify-between items-start mb-4">
+                                    <h4 class="text-xl font-bold text-on-surface">DeMarkX</h4>
+                                    <span class="text-primary font-mono text-[10px]">v1.0.0</span>
+                                </div>
+                                <p class="text-on-surface-variant text-xs mb-6 opacity-80 leading-relaxed">
+                                    Deterministic Markdown repair engine for GitHub CI. AST-based infrastructure that heals syntax and enforces GFM compliance automatically.
+                                </p>
+                                <div class="space-y-3 mb-8">
+                                    <div class="artifact-metadata-item">
+                                        <span class="material-symbols-outlined icon text-[16px]">terminal</span>
+                                        <span>Tech: Python, AST-parsing, YAML</span>
+                                    </div>
+                                    <div class="artifact-metadata-item">
+                                        <span class="material-symbols-outlined icon text-[16px]">psychology</span>
+                                        <span>Focus: CI/CD Automation & DX</span>
+                                    </div>
+                                    <div class="artifact-metadata-item">
+                                        <span class="material-symbols-outlined icon text-[16px]">verified</span>
+                                        <span>Status: Marketplace Verified</span>
+                                    </div>
+                                </div>
+                                <div class="mt-auto">
+                                    <a class="artifact-pill-button w-full" href="https://github.com/marketplace/actions/demarkx-markdown-fixer" target="_blank">
+                                        MARKETPLACE <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <a class="group/link flex items-center gap-2 font-label text-[10px] font-bold tracking-widest text-on-surface uppercase hover:text-primary transition-colors mt-auto" href="https://github.com/SheikhJaveed/customer-feedback-microservices" target="_blank">
-                            VIEW SOURCE <span class="material-symbols-outlined text-xs group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
-                        </a>
-                    </div>
-                    <!-- Project Card 3 -->
-                    <div class="bg-surface-container-low group hover:bg-surface-container transition-all duration-500 p-8 flex flex-col h-full border border-outline-variant/10">
-                        <h3 class="text-xl font-bold mb-6 tracking-tight text-on-surface">3. PR Review Assistant</h3>
-                        <ul class="text-on-surface-variant text-xs mb-8 space-y-4 font-body flex-grow opacity-80">
-                            <li class="flex gap-3"><span class="text-primary mt-1 text-[8px]">▶</span> Developed an automated PR review assistant using GitHub APIs and webhooks.</li>
-                            <li class="flex gap-3"><span class="text-primary mt-1 text-[8px]">▶</span> Integrated context-aware code analysis to provide meaningful feedback during reviews.</li>
-                            <li class="flex gap-3"><span class="text-primary mt-1 text-[8px]">▶</span> Built with Python and Flask for a lightweight and reliable developer tool.</li>
-                        </ul>
-                        <div class="flex flex-wrap gap-2 mb-8">
-                            <span class="font-label text-[10px] px-2 py-1 bg-surface-container-high text-primary uppercase border border-primary/10">Python</span>
-                            <span class="font-label text-[10px] px-2 py-1 bg-surface-container-high text-primary uppercase border border-primary/10">Flask</span>
-                            <span class="font-label text-[10px] px-2 py-1 bg-surface-container-high text-primary uppercase border border-primary/10">GitHub API</span>
+                        <div class="flex flex-col justify-center">
+                            <div class="bg-black/40 p-6 rounded-3xl border border-outline-variant/10 font-mono text-[11px] text-primary/70 leading-relaxed overflow-x-auto">
+                                <div class="text-on-surface-variant/40 mb-4 font-label uppercase text-[9px]"># GitHub Action Blueprint</div>
+                                <span class="text-on-surface">name:</span> DeMarkX Repair<br>
+                                <span class="text-on-surface">on:</span> [pull_request, push]<br>
+                                <span class="text-on-surface">jobs:</span><br>
+                                &nbsp;&nbsp;<span class="text-on-surface">heal:</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-on-surface">steps:</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span class="text-on-surface">uses:</span> SheikhJaveed/demarkx-action@v1<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-on-surface">with:</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-on-surface">apply-safe-fixes:</span> true
+                            </div>
                         </div>
-                        <a class="group/link flex items-center gap-2 font-label text-[10px] font-bold tracking-widest text-on-surface uppercase hover:text-primary transition-colors mt-auto" href="https://github.com/SheikhJaveed/PR_Sentinel" target="_blank">
-                            VIEW SOURCE <span class="material-symbols-outlined text-xs group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
-                        </a>
                     </div>
+
+                    <!-- SECTION 2: ACHIEVEMENTS -->
+                    <div class="category-header">
+                        <span class="font-label text-primary text-[10px] uppercase tracking-[0.2em]">02 / HONORS</span>
+                        <h3 class="text-2xl font-bold text-on-surface tracking-tight">Achievements</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+                        <!-- Elastic Blogathon -->
+                        <div class="artifact-card-v2">
+                            <div class="artifact-image-container grid grid-cols-2 gap-0.5">
+                                <img src="assets/elastic_blogathon_certificate.jpeg" class="h-full" alt="Cert">
+                                <img src="assets/elastic_swag_reward.jpg" class="h-full" alt="Swag">
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h4 class="text-lg font-bold text-on-surface mb-2 leading-tight">Elastic Blogathon 2026</h4>
+                                <p class="text-on-surface-variant text-[11px] mb-6 opacity-70 italic whitespace-nowrap overflow-hidden text-ellipsis">"When Your Logs Talk Back..."</p>
+                                <div class="space-y-3 mb-8">
+                                    <div class="artifact-metadata-item">
+                                        <span class="material-symbols-outlined icon text-[16px]">military_tech</span>
+                                        <span>Global Top 100 Blogs</span>
+                                    </div>
+                                    <div class="artifact-metadata-item">
+                                        <span class="material-symbols-outlined icon text-[16px]">inventory_2</span>
+                                        <span>Prize: Swag Achievement</span>
+                                    </div>
+                                </div>
+                                <div class="mt-auto">
+                                    <a class="artifact-pill-button w-full" href="https://medium.com/@sheikhmannanjaveed/when-your-logs-talk-back-building-an-sre-agent-with-elastic-and-vectors-b9040403f5ed" target="_blank">
+                                        READ BLOG <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Xenith -->
+                        <div class="artifact-card-v2">
+                            <div class="artifact-image-container">
+                                <img src="assets/xenith_hackathon.jpg" alt="Xenith">
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h4 class="text-lg font-bold text-on-surface mb-2">Xenith Hackathon</h4>
+                                <p class="text-on-surface-variant text-[11px] mb-6 opacity-70">Competitive developer participation.</p>
+                                <div class="space-y-3 mb-8">
+                                    <div class="artifact-metadata-item">
+                                        <span class="material-symbols-outlined icon text-[16px]">groups</span>
+                                        <span>Collaboration Winner</span>
+                                    </div>
+                                    <div class="artifact-metadata-item">
+                                        <span class="material-symbols-outlined icon text-[16px]">timer</span>
+                                        <span>24h Rapid Prototyping</span>
+                                    </div>
+                                </div>
+                                <div class="mt-auto">
+                                    <span class="text-[10px] uppercase font-label tracking-widest text-on-surface-variant/40">Participation Artifact</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- BGSCET -->
+                        <div class="artifact-card-v2">
+                            <div class="artifact-image-container">
+                                <img src="assets/bgscet_hackathon.jpg" alt="BGSCET">
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h4 class="text-lg font-bold text-on-surface mb-2">BGSCET Hackathon</h4>
+                                <p class="text-on-surface-variant text-[11px] mb-6 opacity-70">Architecture-focused engineering.</p>
+                                <div class="space-y-3 mb-8">
+                                    <div class="artifact-metadata-item">
+                                        <span class="material-symbols-outlined icon text-[16px]">schema</span>
+                                        <span>Architectural Deep-Dive</span>
+                                    </div>
+                                    <div class="artifact-metadata-item">
+                                        <span class="material-symbols-outlined icon text-[16px]">location_on</span>
+                                        <span>BGS Collegiate Level</span>
+                                    </div>
+                                </div>
+                                <div class="mt-auto">
+                                    <span class="text-[10px] uppercase font-label tracking-widest text-on-surface-variant/40">Participation Artifact</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: RESEARCH -->
+                    <div class="category-header">
+                        <span class="font-label text-primary text-[10px] uppercase tracking-[0.2em]">03 / PUBLICATIONS</span>
+                        <h3 class="text-2xl font-bold text-on-surface tracking-tight">Research Work</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                        <!-- IEEE Paper -->
+                        <div class="artifact-card-v2">
+                            <div class="artifact-image-container">
+                                <img src="assets/research_paper.png" alt="Research Paper">
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h4 class="text-lg font-bold text-on-surface mb-3 leading-snug">Smart Safety Solution: Wearable Health Tracker with Cloud Alerts</h4>
+                                <p class="text-on-surface-variant text-[10px] mb-6 opacity-60 leading-relaxed font-mono">
+                                    Parkavi A; Vishnu Kumar K; Sheikh Mannan Javeed; Yashasvi Krishna; Chethan G A
+                                </p>
+                                <div class="space-y-3 mb-8">
+                                    <div class="artifact-metadata-item">
+                                        <span class="material-symbols-outlined icon text-[16px]">public</span>
+                                        <span>Publication: IEEE Xplore</span>
+                                    </div>
+                                    <div class="artifact-metadata-item">
+                                        <span class="material-symbols-outlined icon text-[16px]">sensors</span>
+                                        <span>Focus: IoT & Fall Detection</span>
+                                    </div>
+                                </div>
+                                <div class="mt-auto">
+                                    <a class="artifact-pill-button w-full" href="https://ieeexplore.ieee.org/document/11296498" target="_blank">
+                                        IEEE XPLORE <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <div class="bg-surface-container-low p-8 rounded-3xl border border-outline-variant/10">
+                                <h5 class="text-sm font-bold text-primary mb-4 flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-sm">description</span> ABSTRACT HIGHLIGHT
+                                </h5>
+                                <p class="text-on-surface-variant text-xs leading-relaxed opacity-80">
+                                    "A comprehensive IoT-based health monitoring system utilizing cloud infrastructure to provide real-time biometric analysis and automated fallback alerting mechanisms for wearable security devices."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: PROJECTS -->
+                    <div class="category-header">
+                        <span class="font-label text-primary text-[10px] uppercase tracking-[0.2em]">04 / REPOSITORIES</span>
+                        <h3 class="text-2xl font-bold text-on-surface tracking-tight">Core Projects</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+                        <!-- MindArena -->
+                        <div class="artifact-card-v2">
+                            <div class="p-8 flex flex-col h-full">
+                                <h4 class="text-xl font-bold text-on-surface mb-4">MindArena</h4>
+                                <p class="text-on-surface-variant text-xs mb-8 opacity-70 leading-relaxed">Role-based AI debate platform using Retrieval Augmented Generation (RAG) and Agentic Frameworks.</p>
+                                <div class="space-y-3 mb-8">
+                                    <div class="artifact-metadata-item">
+                                        <span class="material-symbols-outlined icon text-[16px]">smart_toy</span>
+                                        <span>Agentic AI / LangChain</span>
+                                    </div>
+                                    <div class="artifact-metadata-item">
+                                        <span class="material-symbols-outlined icon text-[16px]">database</span>
+                                        <span>RAG / ChromaDB</span>
+                                    </div>
+                                </div>
+                                <div class="mt-auto">
+                                    <a class="artifact-pill-button w-full" href="https://github.com/SheikhJaveed/AI-DebateClub-genAI-project" target="_blank">
+                                        GITHUB <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Feedback -->
+                        <div class="artifact-card-v2">
+                            <div class="p-8 flex flex-col h-full">
+                                <h4 class="text-xl font-bold text-on-surface mb-4">Microservices</h4>
+                                <p class="text-on-surface-variant text-xs mb-8 opacity-70 leading-relaxed">Scalable feedback architecture engineered with Java, Spring Boot and Docker containerization.</p>
+                                <div class="space-y-3 mb-8">
+                                    <div class="artifact-metadata-item">
+                                        <span class="material-symbols-outlined icon text-[16px]">settings_input_component</span>
+                                        <span>Java / Spring Boot</span>
+                                    </div>
+                                    <div class="artifact-metadata-item">
+                                        <span class="material-symbols-outlined icon text-[16px]">deployed_code</span>
+                                        <span>Docker / PostgreSQL</span>
+                                    </div>
+                                </div>
+                                <div class="mt-auto">
+                                    <a class="artifact-pill-button w-full" href="https://github.com/SheikhJaveed/customer-feedback-microservices" target="_blank">
+                                        GITHUB <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- PR Assistant -->
+                        <div class="artifact-card-v2">
+                            <div class="p-8 flex flex-col h-full">
+                                <h4 class="text-xl font-bold text-on-surface mb-4">PR Assistant</h4>
+                                <p class="text-on-surface-variant text-xs mb-8 opacity-70 leading-relaxed">Automated PR review assistant using GitHub APIs and context-aware code analysis.</p>
+                                <div class="space-y-3 mb-8">
+                                    <div class="artifact-metadata-item">
+                                        <span class="material-symbols-outlined icon text-[16px]">code</span>
+                                        <span>Python / Flask</span>
+                                    </div>
+                                    <div class="artifact-metadata-item">
+                                        <span class="material-symbols-outlined icon text-[16px]">webhook</span>
+                                        <span>GitHub Webhooks</span>
+                                    </div>
+                                </div>
+                                <div class="mt-auto">
+                                    <a class="artifact-pill-button w-full" href="https://github.com/SheikhJaveed/PR_Sentinel" target="_blank">
+                                        GITHUB <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- END NOTE -->
+                    <div class="mt-20 mb-10 text-center opacity-30 font-mono text-[10px] tracking-[0.4em] uppercase space-y-2 select-none">
+                        <div class="h-[1px] w-8 bg-primary/40 mx-auto mb-6"></div>
+                        <p class="text-on-surface">End of Artifact Repository</p>
+                        <p class="text-[8px] tracking-[0.2em] text-primary/60">System Status: Compiled Successfully // 2026</p>
+                    </div>
+                </div>
+                </div>
                 </div>
             </div>
         </section>
 
+        
         <!-- Contact Section -->
         <section class="section-fade h-full flex flex-col justify-center px-6 md:px-12 bg-surface-container-lowest" id="contact">
             <div class="max-w-4xl mx-auto w-full text-center">
